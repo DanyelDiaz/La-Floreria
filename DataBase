@@ -1,1 +1,13 @@
 create database floreria
+
+insert into flor_temporada (id_temporada, temporada) values (1, Verano),
+insert into flor_temporada (id_temporada, temporada) values (2, Otoño),
+insert into flor_temporada (id_temporada, temporada) values (3, Invierno);
+
+insert into proveedor(id_proveedor, nombre_proveedor) values (1, Florero),
+insert into proveedor(id_proveedor, nombre_proveedor) values (2, Clavelito),
+insert into proveedor(id_proveedor, nombre_proveedor) values (3, Tulipanero);
+
+insert into producto(id_producto, nombre_producto, precio) values (1, Girasol, 25),
+insert into producto(id_producto, nombre_producto, precio) values (2, Clavel, 30),
+insert into producto(id_producto, nombre_producto, precio) values (3, Tulipan, 15)
