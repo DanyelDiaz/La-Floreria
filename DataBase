@@ -1,1 +1,53 @@
 create database floreria
+use floreria
+
+create table proveedor(
+id_proveedor int, nombre_proveedor varchar(50), constraint pk_prov primary key (id_proveedor))
+
+create table envio(
+id_envio int, paqueteria varchar(50), zona_envios varchar(50),constraint pk_env primary key (id_envio))
+
+create table cliente(
+id_cliente int, direccion varchar(50), nombre_usuario varchar(50), contraseña varchar(50),constraint pk_cli primary key (id_cliente))
+
+create table flor_temporada(id_temporada int, temporada varchar(50), constraint pk_temp primary key (id_temporada))
+
+create table producto(
+id_producto int,
+nombre_producto varchar(50),
+precio float,
+id_proveedor1 int,
+id_temporada1 int
+constraint pk_Ppro primary key (id_producto)
+constraint fk_Fprov1 foreign key (id_proveedor1) references proveedor (id_proveedor),
+constraint fk_Ftem1 foreign key (id_temporada1) references flor_temporada (id_temporada))
+
+create table venta(
+id_venta int,
+fecha varchar(50),
+id_cliente1 int,
+id_envio1 int
+constraint pk_Pven primary key (id_venta)
+constraint fk_Fcli1 foreign key (id_cliente1) references cliente (id_cliente),
+constraint fk_Fenv1 foreign key (id_envio1) references envio (id_envio))
+
+create table detalles_venta(
+cantidad int,
+descuento int,
+total int,
+id_venta1 int,
+id_producto1 int
+constraint fk_Fven1 foreign key (id_venta1) references venta (id_venta),
+constraint fk_Fpro1 foreign key (id_producto1) references producto (id_producto))
+
+insert into flor_temporada values (1, "Verano"),
+insert into flor_temporada values (2, "Otoño"),
+insert into flor_temporada values (3, "Invierno");
+
+insert into proveedor values (1, "Florero"),
+insert into proveedor values (2, "Clavelito"),
+insert into proveedor values (3, "Tulipanero");
+
+insert into producto values (1, "Girasol", 25),
+insert into producto values (2, "Clavel", 30),
+insert into producto values (3, "Tulipan", 15)
