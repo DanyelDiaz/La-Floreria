@@ -55,3 +55,21 @@ insert into producto values(6,"rosas",40,2 ,2);
 insert into producto values(7,"Tulipanes",20,3 ,3);
 insert into producto values(8,"Noche Buena",75.50,3 ,3);
 insert into producto values(9,"Mangolia",149.99,3 ,3);
+
+DELIMITER $$
+CREATE PROCEDURE revisar_producto (IN producto_idx int)
+BEGIN
+    SELECT * FROM producto
+    WHERE id_producto = producto_idx;
+END $$
+DELIMITER;
+
+DELIMITER //
+CREATE PROCEDURE insertar_venta(
+    IN ID_Dventa int, descuento float, total float, id_venta int, id_producto int, fecha date, id_cliente int)
+BEGIN
+	  insert into venta values(id_venta, fecha, id_cliente);
+    insert into detalles_venta values(ID_Dventa, descuento, total, id_venta, id_producto);
+END//
+DELIMITER ;
+
