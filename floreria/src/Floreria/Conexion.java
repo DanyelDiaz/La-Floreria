@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class Conexion {
+    
     Connection con;
     public Conexion(){
         try {
@@ -24,7 +25,7 @@ public class Conexion {
             rs=st.executeQuery("select * from producto");
             while (rs.next()) {                
                 
-                System.out.println(rs.getInt("id_producto")+" " +rs.getString("nombre_producto"));
+                System.out.println(rs.getString("id_producto")+" " +rs.getString("nombre_producto"));
             }
             cn.con.close();
         } catch (Exception e) {
