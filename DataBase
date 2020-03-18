@@ -42,3 +42,13 @@ insert into flor_temporada values (4, "primavera");
 insert into proveedor values (1, "Florero");
 insert into proveedor values (2, "Clavelito");
 insert into proveedor values (3, "Tulipanero");
+
+insert into producto values(1,"Alcatraz",99.99,1 ,1);
+insert into producto values(2,"Dalia",29.9,1 ,1);
+insert into producto values(3,"Arnica",10.50,1 ,1);
+insert into producto values(4,"Cencpacuchil",35.50,2 ,2);
+insert into producto values(5,"Girasoles",65, 2 ,2);
+insert into producto values(6,"rosas",40,2 ,2);
+insert into producto values(7,"Tulipanes",20,3 ,3);
+insert into producto values(8,"Noche Buena",75.50,3 ,3);
+insert into producto values(9,"Mangolia",149.99,3 ,3);
