@@ -34,6 +34,9 @@ id_producto1 int,
 constraint fk_Fven1 foreign key (id_venta1) references venta (id_venta),
 constraint fk_Fpro1 foreign key (id_producto1) references producto (id_producto));
 
+CREATE INDEX flor_indx
+ON producto (nombre_producto);
+
 insert into flor_temporada values (1, "verano");
 insert into flor_temporada values (2, "Otoño");
 insert into flor_temporada values (3, "Invierno");
